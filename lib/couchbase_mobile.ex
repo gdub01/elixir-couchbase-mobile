@@ -110,5 +110,32 @@ defmodule CouchbaseMobile do
     http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/admin-rest-api/user/get-user-list/index.html
     """
     defdelegate get_users(), to: CouchbaseMobile.AdminAPI.User
+
+    @doc """
+    Creates a session.
+
+    ## Reference
+    https://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/admin-rest-api/session/post---db--_session-/index.html
+    """
+    defdelegate create_session(name, ttl // 180), to: CouchbaseMobile.AdminAPI.Session
+
+
+    @doc """
+    Retrieves a session.
+
+    ## Reference
+    https://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/admin-rest-api/session/get---db--_session--session-id-/index.html
+    """
+    defdelegate get_session(session_id), to: CouchbaseMobile.AdminAPI.Session
+
+
+    @doc """
+    Deletes a session
+
+    ## Reference
+    https://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/admin-rest-api/session/delete---db--_session--session-id-/index.html
+    """
+    defdelegate delete_session(session_id), to: CouchbaseMobile.AdminAPI.Session
+
   end
 end
