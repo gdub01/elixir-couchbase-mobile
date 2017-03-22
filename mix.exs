@@ -34,7 +34,7 @@ defmodule CouchbaseMobile.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.10.0"},
-      {:poison, ">= 1.0.0"},
+      {:poison, "~> 2.0"},
 
       {:exvcr, "~> 0.7", only: :test}
     ]
