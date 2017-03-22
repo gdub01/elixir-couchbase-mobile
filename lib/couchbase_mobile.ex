@@ -117,7 +117,7 @@ defmodule CouchbaseMobile do
     ## Reference
     https://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/admin-rest-api/session/post---db--_session-/index.html
     """
-    defdelegate create_session(name, ttl // 180), to: CouchbaseMobile.AdminAPI.Session
+    defdelegate create_session(name, ttl), to: CouchbaseMobile.AdminAPI.Session
 
 
     @doc """
