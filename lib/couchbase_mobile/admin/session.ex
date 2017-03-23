@@ -15,11 +15,11 @@ defmodule CouchbaseMobile.AdminAPI.Session do
   end
 
   def get_session(session_id) do
-    AdminGW.request(:get, endpoint <> session_id)
+    AdminGW.request(:get, endpoint <> "/" <> session_id)
   end
 
   def delete_session(session_id) do
-    AdminGW.request(:delete, endpoint <> session_id)
+    AdminGW.request(:delete, endpoint <> "/" <> session_id)
   end
 
 end
