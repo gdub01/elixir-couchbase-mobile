@@ -4,7 +4,7 @@ defmodule CouchbaseMobile.AdminAPI.Session do
 
   alias CouchbaseMobile.AdminGW
 
-  def endpoint, do: "/" <> Application.get_env(:couchbase_mobile, :syncgw_bucket) <> "/_session/"
+  def endpoint, do: "/" <> Application.get_env(:couchbase_mobile, :syncgw_bucket) <> "/_session"
 
   def create_session(name, ttl \\ 180) do
     params = %{
