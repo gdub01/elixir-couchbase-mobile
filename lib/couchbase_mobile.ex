@@ -16,7 +16,7 @@ defmodule CouchbaseMobile do
   defp write_json(data), do: data |> Poison.encode!
 
   defmodule SyncGW do
-    def base_url, do: "http://#{Application.get_env(:couchbase_mobile, :syncgw_host)}:#{Application.get_env(:couchbase_mobile, :syncgw_port)}"
+    def base_url, do: "https://#{Application.get_env(:couchbase_mobile, :syncgw_host)}:#{Application.get_env(:couchbase_mobile, :syncgw_port)}"
 
     def request(verb, endpoint, params \\ "") do
       CouchbaseMobile.http(verb, base_url <> endpoint, params)
