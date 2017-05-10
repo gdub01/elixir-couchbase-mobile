@@ -28,7 +28,7 @@ defmodule CouchbaseMobile do
     ## Reference
     http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/post---db-/index.html
     """
-    defdelegate create_document(doc), to: CouchbaseMobile.API.Document
+    defdelegate create_document(doc), to: CouchbaseMobile.AdminAPI.Document
 
     @doc """
     Creates a new document with specified id.
@@ -36,7 +36,7 @@ defmodule CouchbaseMobile do
     ## Reference
     http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/put---db---doc-/index.html
     """
-    defdelegate create_document(id, doc), to: CouchbaseMobile.API.Document
+    defdelegate create_document(id, doc), to: CouchbaseMobile.AdminAPI.Document
 
     @doc """
     Updates a document.
@@ -44,7 +44,7 @@ defmodule CouchbaseMobile do
     ## Reference
     http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/put---db---doc-/index.html
     """
-    defdelegate update_document(id, rev, doc), to: CouchbaseMobile.API.Document
+    defdelegate update_document(id, rev, doc), to: CouchbaseMobile.AdminAPI.Document
 
     @doc """
     Retrieves a document.
@@ -52,8 +52,8 @@ defmodule CouchbaseMobile do
     ## Reference
     http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/get---db---doc-/index.html
     """
-    defdelegate get_document(id),      to: CouchbaseMobile.API.Document
-    defdelegate get_document(id, rev), to: CouchbaseMobile.API.Document
+    defdelegate get_document(id),      to: CouchbaseMobile.AdminAPI.Document
+    defdelegate get_document(id, rev), to: CouchbaseMobile.AdminAPI.Document
 
     @doc """
     Deletes a document.
@@ -61,7 +61,7 @@ defmodule CouchbaseMobile do
     ## Reference
     http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/delete---db---doc-/index.html
     """
-    defdelegate delete_document(id, rev), to: CouchbaseMobile.API.Document
+    defdelegate delete_document(id, rev), to: CouchbaseMobile.AdminAPI.Document
   end
 
   defmodule AdminGW do

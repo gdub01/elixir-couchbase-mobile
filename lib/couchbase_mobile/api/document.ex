@@ -1,4 +1,4 @@
-defmodule CouchbaseMobile.API.Document do
+defmodule CouchbaseMobile.AdminAPI.Document do
   @moduledoc """
   Provides methods to work with individual documents.
 
