@@ -21,47 +21,6 @@ defmodule CouchbaseMobile do
     def request(verb, endpoint, params \\ "") do
       CouchbaseMobile.http(verb, base_url <> endpoint, params)
     end
-
-    @doc """
-    Creates a new document in the database.
-
-    ## Reference
-    http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/post---db-/index.html
-    """
-    defdelegate create_document(doc), to: CouchbaseMobile.AdminAPI.Document
-
-    @doc """
-    Creates a new document with specified id.
-
-    ## Reference
-    http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/put---db---doc-/index.html
-    """
-    defdelegate create_document(id, doc), to: CouchbaseMobile.AdminAPI.Document
-
-    @doc """
-    Updates a document.
-
-    ## Reference
-    http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/put---db---doc-/index.html
-    """
-    defdelegate update_document(id, rev, doc), to: CouchbaseMobile.AdminAPI.Document
-
-    @doc """
-    Retrieves a document.
-
-    ## Reference
-    http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/get---db---doc-/index.html
-    """
-    defdelegate get_document(id),      to: CouchbaseMobile.AdminAPI.Document
-    defdelegate get_document(id, rev), to: CouchbaseMobile.AdminAPI.Document
-
-    @doc """
-    Deletes a document.
-
-    ## Reference
-    http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/delete---db---doc-/index.html
-    """
-    defdelegate delete_document(id, rev), to: CouchbaseMobile.AdminAPI.Document
   end
 
   defmodule AdminGW do
@@ -70,6 +29,49 @@ defmodule CouchbaseMobile do
     def request(verb, endpoint, params \\ "") do
       CouchbaseMobile.http(verb, base_url <> endpoint, params)
     end
+
+
+        @doc """
+        Creates a new document in the database.
+
+        ## Reference
+        http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/post---db-/index.html
+        """
+        defdelegate create_document(doc), to: CouchbaseMobile.AdminAPI.Document
+
+        @doc """
+        Creates a new document with specified id.
+
+        ## Reference
+        http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/put---db---doc-/index.html
+        """
+        defdelegate create_document(id, doc), to: CouchbaseMobile.AdminAPI.Document
+
+        @doc """
+        Updates a document.
+
+        ## Reference
+        http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/put---db---doc-/index.html
+        """
+        defdelegate update_document(id, rev, doc), to: CouchbaseMobile.AdminAPI.Document
+
+        @doc """
+        Retrieves a document.
+
+        ## Reference
+        http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/get---db---doc-/index.html
+        """
+        defdelegate get_document(id),      to: CouchbaseMobile.AdminAPI.Document
+        defdelegate get_document(id, rev), to: CouchbaseMobile.AdminAPI.Document
+
+        @doc """
+        Deletes a document.
+
+        ## Reference
+        http://developer.couchbase.com/documentation/mobile/1.1.0/develop/references/sync-gateway/rest-api/document/delete---db---doc-/index.html
+        """
+        defdelegate delete_document(id, rev), to: CouchbaseMobile.AdminAPI.Document
+
 
     @doc """
     Create a new user.
